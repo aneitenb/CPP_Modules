@@ -6,7 +6,7 @@
 #    By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 15:33:25 by aneitenb          #+#    #+#              #
-#    Updated: 2024/09/16 12:48:18 by aneitenb         ###   ########.fr        #
+#    Updated: 2024/09/18 14:45:46 by aneitenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = phonebook
 HEADERS	= -I ./include
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 SRCS = main.cpp		\
 	PhoneBook.cpp	\
 	Contact.cpp
