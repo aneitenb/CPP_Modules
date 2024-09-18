@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:59:38 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/18 10:39:35 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/18 11:07:20 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CONTACT_HPP
 
 # include <iostream>
-#include <string>
+# include <string>
 
 class Contact
 {

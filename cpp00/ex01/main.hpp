@@ -3,6 +3,7 @@
 
 # include <iostream> //std::cout, std::endl, std::cin
 # include <iomanip> //std::setw
+# include <string>  //std::string
 # include "PhoneBook.hpp"
 # include "Contact.hpp"
 
