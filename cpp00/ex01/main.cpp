@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:27:44 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/18 18:57:28 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/18 19:14:08 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,18 @@ void	PhoneBook::add_contact()
 	if (contact == -1)
 		contact = 0;
 	else if (contact >= 7)
-		contact = contact % 8;
+	{
+		contact = contact % 7;
+		full_booked++;	
+	}
 	else
+	{
 		contact++;
+		full_booked++;
+	}
+	if (full_booked >= 7)
+		full_booked = 7;
+	std::cout << "contact value: " << contact << std::endl;
 	index[contact].set_value(first_name, last_name, nickname, phone_number, darkest_secret);
 }
 
@@ -73,7 +82,7 @@ void		PhoneBook::search_contact()
 	<< std::setw(10) << "Last Name" << " | " 
 	<< std::setw(10) << "Nickname" << std::endl;
 	
-	for (int i = 0; i <= contact; i++)
+	for (int i = 0; i <= full_booked; i++)
 	{
 		first_name = index[i].get_first_name();
 		last_name = index[i].get_last_name();
@@ -115,6 +124,7 @@ int main(void)
 	std::string	input;
 	
 	pbook.contact = -1;
+	pbook.full_booked = 0;
     while (1)
     {
         std::cout << "Hi, it's ur phonebook main page! Choose an option: (ADD / SEARCH / EXIT) \n";
