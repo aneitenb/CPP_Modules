@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:23:43 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/20 15:52:46 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:16:46 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	randomChump(std::string name);
 
 int	main()
 {
-	Zombie*	Barbie;
+	Zombie	*Barbie;
 	
 	Barbie = newZombie("Barbie");
 	Barbie->announce();
