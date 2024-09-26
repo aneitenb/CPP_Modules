@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:07:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 10:49:47 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/26 13:24:45 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/26 15:24:23 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
+#ifndef HUMANA_HPP
 
-# define ZOMBIE_HPP
-# include <iostream>    //for std::cout, std::cin, std::cerr
-# include <string>      //for std::string
-# include <array>		//for std::array
+# define HUMANA_HPP
+# include "Weapon.hpp"
 
-class Zombie
+class HumanA
 {
 	private:
 		std::string name;
+		const Weapon& weapon;
 	public:
-		Zombie();	//default
-		Zombie(std::string zombieName);
-		~Zombie();
+		~HumanA();
 		
-		void	announce();
+		HumanA(const std::string& given_name, const Weapon& given_weapon);
+
+		void	attack()const;
 };
 
-
-
-
-# endif
+#endif

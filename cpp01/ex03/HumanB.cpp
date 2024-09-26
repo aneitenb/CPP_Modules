@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:07:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 10:49:47 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/26 13:25:49 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/26 15:19:28 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
+#include "HumanB.hpp"
 
-# define ZOMBIE_HPP
-# include <iostream>    //for std::cout, std::cin, std::cerr
-# include <string>      //for std::string
-# include <array>		//for std::array
-
-class Zombie
+HumanB::HumanB(const std::string& given_name): weapon(NULL)
 {
-	private:
-		std::string name;
-	public:
-		Zombie();	//default
-		Zombie(std::string zombieName);
-		~Zombie();
-		
-		void	announce();
-};
+	name = given_name;
+}
 
+HumanB::~HumanB(){
+}
 
+void	HumanB::attack()const
+{
+	if (weapon)
+		std::cout << name << " attacks with " << weapon->getType() << std::endl;
+	else
+		std::cout << name << " does not have a weapon" <<  std::endl;
+}
 
-
-# endif
+void	HumanB::setWeapon(const Weapon& given_weapon)
+{
+	weapon = &given_weapon;
+}

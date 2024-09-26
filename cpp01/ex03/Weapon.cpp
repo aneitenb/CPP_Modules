@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:07:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 10:49:47 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/26 12:59:50 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/26 15:11:24 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
+#include "Weapon.hpp"
 
-# define ZOMBIE_HPP
-# include <iostream>    //for std::cout, std::cin, std::cerr
-# include <string>      //for std::string
-# include <array>		//for std::array
+Weapon::Weapon() : type("undefined weapon") {}
 
-class Zombie
+Weapon::Weapon(const std::string& given_type)
 {
-	private:
-		std::string name;
-	public:
-		Zombie();	//default
-		Zombie(std::string zombieName);
-		~Zombie();
-		
-		void	announce();
-};
+	type = given_type;
+}
 
+const std::string& Weapon::getType()const
+{
+	return (type);
+}
 
+void Weapon::setType(const std::string& newtype)
+{
+	type = newtype;
+}
 
-
-# endif
+Weapon::~Weapon(){
+}

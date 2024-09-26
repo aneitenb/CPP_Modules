@@ -5,30 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/20 16:05:34 by aneitenb          #+#    #+#              #
-#    Updated: 2024/09/26 11:14:11 by aneitenb         ###   ########.fr        #
+#    Created: 2024/09/26 11:24:09 by aneitenb          #+#    #+#              #
+#    Updated: 2024/09/26 11:27:25 by aneitenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = moarbrainz
-HEADERS	= -I ./include
+NAME = Brain
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-SRCS =  main.cpp \
-		Zombie.cpp	\
-		zombieHorde.cpp
+SRCS =  main.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(HEADERS) -o $(NAME)
-	@echo "\033[32;1mProgram moarbrainz is Ready!\033[0m"
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "\033[32;1mProgram Brain is Ready!\033[0m"
 
 clean:
 	@$(RM) $(OBJS) 

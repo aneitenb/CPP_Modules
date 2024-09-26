@@ -5,26 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:06:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 11:09:14 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/26 12:43:05 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/26 15:31:22 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde(int N, std::string name);
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-    Zombie  *horde;
-    int     N;
-    
-    N = 11;
-    horde = zombieHorde(N, "Barbie");
-    for (int i = 0; i < N; i++)
-    {
-        horde[i].announce();
-    }
-    delete[] horde;
-    return (0);
+	{
+	Weapon club = Weapon("huge spoon the size of a giraffe");
+	HumanA bob("Bob", club);
+
+	bob.attack();
+	club.setType("glob of jelly that engulfs opponent");
+	bob.attack();
+	}
+	{
+	Weapon club = Weapon("huge spoon the size of a giraffe");
+	HumanB jim("Jim");
+
+	jim.attack();
+	jim.setWeapon(club);
+	club.setType("mini monkeys that tickle opponent incapable");
+	jim.attack();
+	}
+	return (0);
 }
