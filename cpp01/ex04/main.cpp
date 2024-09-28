@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:39:32 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 16:39:05 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/28 14:26:45 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	main(int ac, char **av)
 
 	if (ac != 4)
 	{
-		std::cerr << "Error: Incorrect number of inputs, include <filename> \\
-		<string to be replaced> <new string>" << std::endl;
+		std::cerr << "Error: Input <filename> <string to be replaced> <new string>" << std::endl;
 		return (1);
 	}
 	file = av[1];
@@ -40,7 +39,7 @@ int	main(int ac, char **av)
         return (1);
 	}
 	
-	std::ofstream outputFile(file + ".replace");	//opens output file
+	std::ofstream outputFile(file + ".replace");    //opens output file
 	if (!outputFile.is_open()) 
 	{
         std::cerr << "Error: Could not create output file " << file << ".replace" << std::endl;

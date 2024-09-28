@@ -6,26 +6,34 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:36:31 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/26 16:53:33 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/28 14:28:08 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-std::string	replace_strings(std::string long_line, std::string s1, std::string s2)
+std::string	replace_strings(const std::string& long_line, const std::string& s1, const std::string& s2)
 {
 	std::string result;
-	size_t pos;
-	size_t s1_len;
-	
-	pos = 0;
-	s1_len = s1.length();
-	while ((pos = long_line.find(s1, pos)) && pos != std::string::npos) 
-	{
-		result.append(long_line.substr(0, pos));// Append the part before s1
-		result.append(s2);						// Replace s1 with s2
-		pos += s1_len;							// Move past the found s1
-	}
-	result.append(long_line.substr(pos));  // Append the remaining part of the line
-	return (result);
+    size_t pos = 0;     
+    size_t found_pos;	// Position where s1 is found
+
+    // find returns position of s1 in the string, or npos if not found
+    found_pos = long_line.find(s1, pos);
+    
+    while (found_pos != std::string::npos) 
+    {
+		// Append the part of the string before s1 into result string
+		result.append(long_line, pos, found_pos - pos);
+		
+		// Append s2 into result string
+		result.append(s2);
+		
+		pos = found_pos + s1.length();
+    	found_pos = long_line.find(s1, pos);
+    }
+	// Append the rest of the string after the last s1 occurrence
+	result.append(long_line, pos);
+
+	return result;
 }
