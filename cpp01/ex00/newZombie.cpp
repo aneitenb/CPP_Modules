@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:06:10 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/20 15:50:19 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:06:43 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 //	it outside of the function scope.
 Zombie*	newZombie(std::string name)
 {
-	return (new Zombie(name));	//the "new" function allocates memory on the heap
+	return new Zombie(name);	//the "new" function allocates memory on the heap
 }

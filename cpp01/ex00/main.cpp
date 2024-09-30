@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:23:43 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/20 16:16:46 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:08:03 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int	main()
 	Zombie	*Barbie;
 	
 	Barbie = newZombie("Barbie");
+	randomChump("Ken");	//this function only uses stack memory so we don't need to delete
 	Barbie->announce();
 	delete Barbie;	//"delete" function is used to clear allocated heap memory from newZombie
-	
-	randomChump("Ken");	//this function only uses stack memory so we don't need to delete
-	
+
 	return (0);
 }

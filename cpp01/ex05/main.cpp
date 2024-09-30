@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 14:32:16 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/28 16:40:13 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:01:24 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int	main()
 	customer.complain("WARNING");
 	customer.complain("ERROR");
 	customer.complain("RANDOM");
-
 	return (0);
 }

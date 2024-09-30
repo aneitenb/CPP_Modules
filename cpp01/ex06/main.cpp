@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:07:39 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/30 14:08:38 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/26 15:39:32 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/30 12:54:23 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "harlFilter.hpp"
+#include <iostream>
 
-Zombie* zombieHorde(int N, std::string name)
+
+int	main(int ac, char **av)
 {
-	Zombie	*horde;
+	harlFilter	customer;
 
-	if (N < 0)
-		return ;
-	horde = new Zombie[N];	//this uses the default constructor
-	for(int i = 0; i < N; i++)
+	if (ac != 2)
 	{
-		horde[i] = Zombie(name);	
+		std::cerr << "Error: Input <level> of complaint" << std::endl;
+		return (1);	
 	}
-	return(horde);
+	customer.complain(av[1]);
+	return (0);
 }

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   harlFilter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 16:07:39 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/30 14:08:38 by aneitenb         ###   ########.fr       */
+/*   Created: 2024/09/28 14:32:53 by aneitenb          #+#    #+#             */
+/*   Updated: 2024/09/30 12:51:50 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARLFILTER_HPP
 
-Zombie* zombieHorde(int N, std::string name)
+# define HARLFILTER_HPP
+# include <string>
+
+class harlFilter
 {
-	Zombie	*horde;
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		harlFilter();
+		~harlFilter();
 
-	if (N < 0)
-		return ;
-	horde = new Zombie[N];	//this uses the default constructor
-	for(int i = 0; i < N; i++)
-	{
-		horde[i] = Zombie(name);	
-	}
-	return(horde);
-}
+		void complain(std::string level);
+};
+
+#endif
