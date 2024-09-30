@@ -6,13 +6,12 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:39:32 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/30 12:54:23 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:39:32 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "harlFilter.hpp"
 #include <iostream>
-
 
 int	main(int ac, char **av)
 {

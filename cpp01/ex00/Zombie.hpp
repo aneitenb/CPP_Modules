@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:47:04 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/20 16:11:30 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:39:04 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ class Zombie
 		void	announce();
 };
 
-# endif
+#endif
