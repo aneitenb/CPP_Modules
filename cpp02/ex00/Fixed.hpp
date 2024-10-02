@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/02 15:50:42 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:53:15 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ private:
 	int					fixed_point;
 	static const int	fractional_bits = 8;
 public:
-	Fixed();
-	Fixed(const Fixed &other); // Copy constructor
-    Fixed &operator=(const Fixed &other); // Copy assignment operator
+	Fixed();								// Default constructor
+	Fixed(const Fixed &other); 				// Copy constructor
+    Fixed &operator=(const Fixed &other);	// Copy assignment operator
 	~Fixed();
 
-	int		getRawBits()const;
+	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
 
