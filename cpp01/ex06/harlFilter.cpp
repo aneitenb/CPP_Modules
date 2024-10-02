@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 14:32:56 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/09/30 14:30:05 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:46:01 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,30 @@ void harlFilter::complain(std::string level)
 	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
-		if (level == levels[i])
-		
-	switch (i)
 	{
-		case 0:
-			this->debug();
-		case 1:
-			this->info();
-		case 2:
-			this->warning();
-		case 3:
-			this->error();
-			break;
-		default:
-			std::cerr << "Complaining about insignificant problems" << std::endl;
-			break;
+		if (level == levels[i])
+		{
+			switch (i)
+			{
+				case 0:
+				{
+					this->debug();
+				}
+				case 1:
+				{
+					this->info();
+				}
+				case 2:
+				{
+					this->warning();
+				}
+				case 3:
+				{
+					this->error();
+					break;
+				}
+			}
+		}
 	}
+	std::cerr << "Complaining about insignificant problems" << std::endl;
 }
