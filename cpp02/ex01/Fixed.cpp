@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:40 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/02 19:37:09 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:55:29 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-	fixed_point = 0;
+	fixedPoint = 0;
 }
 
 // Copy constructor: used to create a new object by copying an existing object
@@ -32,23 +32,25 @@ Fixed::Fixed(const Fixed &other)
 Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	fixed_point = value << fractional_bits;	//bit shift left by 8 (same as x256)
+	fixedPoint = value << fractionalBits;	//bit shift left by 8 (same as x256)
 }			
 
 // Float constructor: converts floating number to fixed point
 Fixed::Fixed(float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	fixed_point = roundf(value * (1 << fractional_bits)); //rounds to nearest int
+	fixedPoint = roundf(value * (1 << fractionalBits)); //rounds to nearest int
 }
 
-// Copy assignment operator: used when you assign one already existing object to 
-// another already existing object
+/*
+** Copy assignment operator: used when you assign one already existing object to 
+** another already existing object
+*/
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->fixed_point = other.getRawBits();
+		this->fixedPoint = other.getRawBits();
 	return (*this);
 }
 
@@ -58,34 +60,37 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-int		Fixed::getRawBits()const
+int	Fixed::getRawBits()const
 {
-	return (this->fixed_point);
+	return (this->fixedPoint);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->fixed_point = raw;
+	this->fixedPoint = raw;
 }
 
 // converts internal fixed-point value into a float.
 float	Fixed::toFloat(void) const
 {
-	return (float)fixed_point / (1 << fractional_bits);
+	return (float)fixedPoint / (1 << fractionalBits);
 }
 
-// converts internal fixed-point value into an integer
+/*
+** converts internal fixed-point value into an integer
+** The right shift operator (>>) effectively divides the number by
+** powers of 2. Shifting right by 1 bit divides the number by 2,
+** shifting by 8 bits divides by 2^8 (which is 256).
+*/
 int		Fixed::toInt(void) const
 {
-	return fixed_point >> fractional_bits;	//Bit shift right to convert
-	/*The right shift operator (>>) effectively divides the number by 
-	powers of 2. Shifting right by 1 bit divides the number by 2, 
-	shifting by 8 bits divides by 2^8 (which is 256). */
+	return fixedPoint >> fractionalBits;	//Bit shift right to convert
 }
 
+
+// Convert the fixed-point number to float and insert into the stream 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) 
 {
-    out << fixed.toFloat();  /*Convert the fixed-point number to float 
-	and insert into the stream */
-    return out;
+	out << fixed.toFloat();  
+	return out;
 }

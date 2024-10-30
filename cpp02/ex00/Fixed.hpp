@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 11:48:16 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:21:18 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ private:
 public:
 	Fixed();								// Default constructor
 	Fixed(const Fixed &other); 				// Copy constructor
-    Fixed &operator=(const Fixed &other);	// Copy assignment operator
 	~Fixed();
 
+    Fixed &operator=(const Fixed &other);	// Copy assignment operator
 	int		getRawBits(void) const;
 	void	setRawBits(int const rawBits);
 };
