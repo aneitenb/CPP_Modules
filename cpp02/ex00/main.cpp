@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:44 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/02 16:18:36 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:49:52 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
 
-	a.setRawBits(3456);
-	std::cout << a.getRawBits() << std::endl;
+	// a.setRawBits(3456);
+	// std::cout << a.getRawBits() << std::endl;
 	return (0);
 }

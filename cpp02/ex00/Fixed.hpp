@@ -6,24 +6,25 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/02 16:53:15 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:48:16 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 
 # define FIXED_HPP
+
 /*
--The copy constructor is used to create a new object by copying an existing 
-object.
--The copy assignment operator is used when you assign one already existing 
-object to another already existing object.
+** The copy constructor is used to create a new object by copying an existing 
+** object.
+** The copy assignment operator is used when you assign one already existing 
+** object to another already existing object.
 */
 class Fixed
 {
 private:
-	int					fixed_point;
-	static const int	fractional_bits = 8;
+	int					fixedPoint;
+	static const int	fractionalBits = 8;
 public:
 	Fixed();								// Default constructor
 	Fixed(const Fixed &other); 				// Copy constructor
@@ -31,7 +32,7 @@ public:
 	~Fixed();
 
 	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+	void	setRawBits(int const rawBits);
 };
 
 #endif
