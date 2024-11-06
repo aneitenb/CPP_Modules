@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:44 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 16:22:04 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:06:24 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ std::cout << a << std::endl;
 std::cout << a++ << std::endl;
 std::cout << a << std::endl;
 std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
+std::cout << Fixed::max(a, b) << std::endl;
 return 0;
 }

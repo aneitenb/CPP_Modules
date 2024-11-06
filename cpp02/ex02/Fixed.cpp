@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:40 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 16:20:56 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:00:40 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ Fixed& Fixed::operator++(){		//pre-increment
 Fixed	Fixed::operator++(int){	//post-increment
 	Fixed	temp;
 
+	temp = *this;        		//copy the entire object, not just the raw value
 	this->fixedPoint += 1;
 	return (temp);
 }
@@ -128,6 +129,7 @@ Fixed&	Fixed::operator--(){	//pre-decrement
 Fixed	Fixed::operator--(int){	//post-decrement
 	Fixed	temp;
 
+	temp = *this;
 	this->fixedPoint -= 1;
 	return (temp);
 }		

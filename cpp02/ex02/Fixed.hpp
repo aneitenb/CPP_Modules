@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 15:37:34 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:33:09 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,27 @@ public:
 	Fixed();
 	Fixed(const int value);
 	Fixed(const float value);
-	Fixed(const Fixed &other);
+	Fixed(const Fixed& other);
 
 	/*		Deconstructor		*/
 	~Fixed();
 
 	/*		Copy assignment operator		*/
-	Fixed &operator=(const Fixed &other);
+ Fixed& operator=(const Fixed& other);
 
 	/*		Comparison Operators		*/
-	bool	operator>(const Fixed &other) const;
-	bool	operator<(const Fixed &other) const;
-	bool	operator>=(const Fixed &other) const;
-	bool	operator<=(const Fixed &other) const;
-	bool	operator==(const Fixed &other) const;
-	bool	operator!=(const Fixed &other) const;
+	bool	operator>(const Fixed& other) const;
+	bool	operator<(const Fixed& other) const;
+	bool	operator>=(const Fixed& other) const;
+	bool	operator<=(const Fixed& other) const;
+	bool	operator==(const Fixed& other) const;
+	bool	operator!=(const Fixed& other) const;
 
 	/*		Arithmetic Operators		*/
-	Fixed	operator+(const Fixed &other) const;
-	Fixed	operator-(const Fixed &other) const;
-	Fixed	operator*(const Fixed &other) const;
-	Fixed	operator/(const Fixed &other) const;
+	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other) const;
+	Fixed	operator/(const Fixed& other) const;
 
 	/*		Increment/Decrement Operators		*/
 	Fixed	&operator++();					//pre-increment
@@ -68,6 +68,6 @@ public:
 };
 
 /*		Stream operator overload		*/
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream &operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

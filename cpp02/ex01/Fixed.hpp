@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 12:17:10 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:32:54 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
 	Fixed(const Fixed &other);				// Copy constructor
 	~Fixed();
 
-	Fixed &operator=(const Fixed &other); 	// Copy assignment operator
+	Fixed &operator=(const Fixed& other); 	// Copy assignment operator
+	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;
@@ -47,6 +48,6 @@ public:
 ** object to an output stream (like std::cout). When you use the << operator 
 ** with a Fixed instance, this function will be invoked to format the output.
 */
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream &operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif
