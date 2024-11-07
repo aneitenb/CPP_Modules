@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:40 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 11:48:10 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:25:49 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed()
 
 /*
 Copy constructor
--*this is a pointer to the current object, i.e., the instance of the class 
+*this is a pointer to the current object, i.e., the instance of the class 
 that is calling the function. The expression *this is the dereferenced version 
 of this, which gives you a reference to the current object itself rather than a 
 pointer.

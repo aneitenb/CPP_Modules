@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/06 10:33:09 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:00:16 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	~Fixed();
 
 	/*		Copy assignment operator		*/
- Fixed& operator=(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
 
 	/*		Comparison Operators		*/
 	bool	operator>(const Fixed& other) const;
