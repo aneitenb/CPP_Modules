@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:21 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 17:48:46 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/09 15:56:43 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ void	ScavTrap::setDamagePoints(unsigned int points){
 
 void	ScavTrap::attack(const std::string& target){
 	if (energyPoints == 0)
-		std::cout << "ScavTrap " << name << "has no energy and cannot attack:(" << std::endl;
+		std::cout << "ScavTrap " << name << " has no energy and cannot attack:(" << std::endl;
 	else if (hitPoints == 0)
-		std::cout << "ScavTrap " << name << "is dead and cannot attack:(" << std::endl;
+		std::cout << "ScavTrap " << name << " is dead and cannot attack:(" << std::endl;
 	else
 	{
 		energyPoints -= 1;
 		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << damagePoints << " points of damage!" 
-		"(energy remaining: " << energyPoints << ")" << std::endl;	
+		"(energy points remaining: " << energyPoints << ")" << std::endl;	
 	}
 }
 
@@ -97,7 +97,7 @@ void	ScavTrap::takeDamage(unsigned int amount){
 
 void	ScavTrap::beRepaired(unsigned int amount){
 	if (energyPoints == 0)
-		std::cout << "ScavTrap " << name << "has no energy and cannot be repaired";
+		std::cout << "ScavTrap " << name << " has no energy and cannot be repaired";
 	else
 	{
 		energyPoints -= 1;
@@ -109,5 +109,5 @@ void	ScavTrap::beRepaired(unsigned int amount){
 
 
 void	ScavTrap::guardGate(){
-	std::cout << "ScavTrap " << name << "is now in Gate Keeper Mode" << std::endl;
+	std::cout << "ScavTrap " << name << " is now in Gate Keeper Mode" << std::endl;
 }

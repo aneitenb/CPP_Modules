@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 17:56:55 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/09 15:58:24 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,40 @@
 
 int	main()
 {
-	ClapTrap Alex("Alex");
-	ScavTrap Debbie("Debbie");
-	ScavTrap Tom("Tom");
+	ClapTrap Aida("Aida");
+	ScavTrap Demon("Demon");
+	ScavTrap Angel("Angel");
 
-	std::cout << "\nDebbie HP: " << Debbie.getHitPoints() << " | EP: " << Debbie.getEnergyPoints() << " | Damage points: " << Debbie.getDamagePoints() << std::endl;
-	std::cout << "Tom    HP: " << Tom.getHitPoints() << " | EP: " << Tom.getEnergyPoints() << " | Damage points: " << Tom.getDamagePoints() << std::endl;
-	std::cout << "Alex   HP: " << Alex.getHitPoints() << "  | EP: " << Alex.getEnergyPoints() << "  | Damage points: " << Alex.getDamagePoints() << std::endl << std::endl;
+	std::cout << "\n" << std::endl;
+	std::cout << "Aida HP: " << Aida.getHitPoints() << "  | EP: " << Aida.getEnergyPoints() << "  | Damage points: " << Aida.getDamagePoints() << std::endl;
+	std::cout << "Demon HP: " << Demon.getHitPoints() << " | EP: " << Demon.getEnergyPoints() << " | Damage points: " << Demon.getDamagePoints() << std::endl;
+	std::cout << "Angel HP: " << Angel.getHitPoints() << " | EP: " << Angel.getEnergyPoints() << " | Damage points: " << Angel.getDamagePoints() << std::endl;
+	std::cout << "\n" << std::endl;
 	
-	Alex.setEnergyPoints(2);
-	Alex.attack("Debbie");
-	Debbie.takeDamage(0);
-	Tom.attack("Debbie");
-	Debbie.takeDamage(20);
-	Debbie.beRepaired(15);
-	Tom.attack("Alex");
-	Alex.takeDamage(11);
-	Alex.beRepaired(20);
-	Alex.attack("Greg");
-	Debbie.attack("Tom");
-	Tom.takeDamage(20);
-	Debbie.attack("Tom");
-	Tom.takeDamage(20);
-	Debbie.attack("Tom");
-	Tom.takeDamage(20);
-	Tom.setHitPoints(0);
-	Tom.attack("Debbie");
-	Debbie.guardGate();
+	Aida.setDamagePoints(2);
+	std::cout << "Aida DP: " << Aida.getDamagePoints() << std::endl;
+	Aida.attack("Demon");
+	Demon.takeDamage(2);
+	Angel.attack("Demon");
+	Demon.takeDamage(20);
+	Demon.beRepaired(15);
+	Angel.attack("Aida");
+	Aida.takeDamage(11);
+	Aida.beRepaired(20);
+	Aida.attack("Demon");
+	Demon.takeDamage(2);
+	Demon.attack("Angel");
+	Angel.takeDamage(20);
+	Demon.attack("Angel");
+	Angel.takeDamage(20);
+	Demon.attack("Angel");
+	Angel.takeDamage(20);
+	// Angel.setHitPoints(0);
+	Angel.attack("Demon");
+	Demon.guardGate();
 
-	
-std::cout << "\nDebbie HP: " << Debbie.getHitPoints() << " | EP: " << Debbie.getEnergyPoints() << " | Damage points: " << Debbie.getDamagePoints() << std::endl;
-std::cout << "Tom    HP: " << Tom.getHitPoints() << " | EP: " << Tom.getEnergyPoints() << " | Damage points: " << Tom.getDamagePoints() << std::endl;
-std::cout << "Alex   HP: " << Alex.getHitPoints() << "  | EP: " << Alex.getEnergyPoints() << "  | Damage points: " << Alex.getDamagePoints() << std::endl << std::endl;
+	std::cout << "\n" << std::endl;
+	std::cout << "\nDemon HP: " << Demon.getHitPoints() << " | EP: " << Demon.getEnergyPoints() << " | Damage points: " << Demon.getDamagePoints() << std::endl;
+	std::cout << "Angel HP: " << Angel.getHitPoints() << " | EP: " << Angel.getEnergyPoints() << " | Damage points: " << Angel.getDamagePoints() << std::endl;
+	std::cout << "Aida HP: " << Aida.getHitPoints() << "  | EP: " << Aida.getEnergyPoints() << "  | Damage points: " << Aida.getDamagePoints() << std::endl << std::endl;
 }
