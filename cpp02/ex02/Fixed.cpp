@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:40 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/11 14:37:13 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:39:18 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ bool	Fixed::operator!=(const Fixed &other) const{
 Fixed	Fixed::operator+(const Fixed &other) const{
 	Fixed	result;
 
-	result.setRawBits(this->toFloat() + other.toFloat());
+	result = (this->toFloat() + other.toFloat());
 	return result;
 }
 
