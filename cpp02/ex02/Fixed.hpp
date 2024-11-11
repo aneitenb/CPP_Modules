@@ -6,13 +6,11 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 14:00:16 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:31:30 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-
-# define FIXED_HPP
+#pragma once
 
 # include <iostream>
 
@@ -69,5 +67,3 @@ public:
 
 /*		Stream operator overload		*/
 std::ostream &operator<<(std::ostream& out, const Fixed& fixed);
-
-#endif

@@ -6,13 +6,11 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:36 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 13:59:44 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:31:47 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-
-# define FIXED_HPP
+#pragma once
 
 /*
 ** The copy constructor is used to create a new object by copying an existing 
@@ -35,5 +33,3 @@ public:
 	int		getRawBits(void) const;
 	void	setRawBits(int const rawBits);
 };
-
-#endif
