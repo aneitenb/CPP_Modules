@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:26:40 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/10/30 13:55:29 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:23:06 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &other) 
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other; // Copies the data from "other" to the current object (*this)
+	this->fixedPoint = other.getRawBits(); // Direct copy
 }
 
 // Int constructor: converts int to fixed point
