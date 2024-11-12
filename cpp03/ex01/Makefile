@@ -6,7 +6,7 @@
 #    By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/02 15:26:48 by aneitenb          #+#    #+#              #
-#    Updated: 2024/11/07 16:19:41 by aneitenb         ###   ########.fr        #
+#    Updated: 2024/11/12 13:51:55 by aneitenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS =  main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
-RM = rm -f
+RM = rm -rf
 
 all: $(NAME)
 

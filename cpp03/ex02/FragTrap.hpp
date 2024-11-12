@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:17:43 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/09 16:27:15 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:10:00 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ public:
 	void			attack(const std::string& target);
 	void			beRepaired(unsigned int amount);
 	void			takeDamage(unsigned int amount);
-	void 			guardGate();
 	void 			highFivesGuys(void);
 };

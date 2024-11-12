@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:17:47 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/09 16:29:57 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:28:02 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 ** have essential initialization that needs to happen first
 */
 FragTrap::FragTrap() : ClapTrap() {
+	setName("defaultFrag");
+	setHitPoints(100);
+	setEnergyPoints(100);
+	setDamagePoints(30);
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
@@ -76,7 +80,7 @@ void	FragTrap::attack(const std::string& target){
 	else
 	{
 		energyPoints -= 1;
-		std::cout << "FragTrap " << name << " attacks " << target << ", causing " << damagePoints << " points of damage!" 
+		std::cout << "FragTrap " << name << " attacks " << target << ", causing " << damagePoints << " points of damage! " 
 		"(energy points remaining: " << energyPoints << ")" << std::endl;	
 	}
 }
@@ -98,6 +102,8 @@ void	FragTrap::takeDamage(unsigned int amount){
 void	FragTrap::beRepaired(unsigned int amount){
 	if (energyPoints == 0)
 		std::cout << "FragTrap " << name << " has no energy and cannot be repaired";
+	else if (hitPoints == 0)
+		std::cout << "FragTrap " << name << " is dead and cannot be repaired" << std::endl;
 	else
 	{
 		energyPoints -= 1;
@@ -108,5 +114,10 @@ void	FragTrap::beRepaired(unsigned int amount){
 }
 
 void 	FragTrap::highFivesGuys(void){
-	std::cout << "FragTrap " << name << " can I get a high five bro?? Cowabunga!" << std::endl;
+	if (hitPoints == 0)
+		std::cout << "FragTrap " << name << " is dead and cannot high-five:(" << std::endl;
+	else if (energyPoints == 0)
+		std::cout << "FragTrap " << name << " has no energy and cannot high-five:(" << std::endl;
+	else
+		std::cout << "FragTrap " << name << ": can I get a high-five bro?? Cowabunga!" << std::endl;
 }

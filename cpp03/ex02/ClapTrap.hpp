@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:12:15 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 17:26:47 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:04:05 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-protected:		//Private to the outside world, but accessible to derived classes like ScavTrap
+protected:
 	std::string	name;		
 	int			hitPoints;
 	int			energyPoints;

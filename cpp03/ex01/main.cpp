@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/09 15:58:24 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:08:49 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main()
 	Angel.takeDamage(20);
 	Demon.attack("Angel");
 	Angel.takeDamage(20);
-	// Angel.setHitPoints(0);
+	Angel.setHitPoints(0);
 	Angel.attack("Demon");
 	Demon.guardGate();
 
