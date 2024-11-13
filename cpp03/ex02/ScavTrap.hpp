@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:24 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:41:29 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:20:47 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ScavTrap : public ClapTrap
 {
 public:
 	ScavTrap();
-	ScavTrap(std::string name);
+	ScavTrap(std::string newName);
 	ScavTrap(const ScavTrap&);
 	ScavTrap& operator=(const ScavTrap&);
 	~ScavTrap();

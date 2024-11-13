@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:21 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:41:25 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:20:41 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 *				constructors/destructor 				* 
 *********************************************************/
 ScavTrap::ScavTrap() : ClapTrap() {
-	setName("defaultScav");
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setDamagePoints(20);
+	this->name = "defaultScav";
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	setName(name);
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setDamagePoints(20);
+ScavTrap::ScavTrap(std::string newName) : ClapTrap(newName) {
+	this->name = newName;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
 }
 
