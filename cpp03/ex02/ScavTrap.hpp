@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:24 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/09 16:02:10 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:41:29 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,10 @@ class ScavTrap : public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap&);
+	ScavTrap& operator=(const ScavTrap&);
 	~ScavTrap();
 	
-	std::string&	getName();
-	unsigned int	getHitPoints();
-	unsigned int	getEnergyPoints();
-	unsigned int	getDamagePoints();
-	void			setName(std::string new_name);
-	void			setHitPoints(unsigned int points);
-	void			setEnergyPoints(unsigned int points);
-	void			setDamagePoints(unsigned int points);
 	void			attack(const std::string& target);
-	void			beRepaired(unsigned int amount);
-	void			takeDamage(unsigned int amount);
 	void 			guardGate();
 };

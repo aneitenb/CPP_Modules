@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:12:15 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/07 17:26:47 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:43:48 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 
 class ClapTrap
 {
-protected:		//Private to the outside world, but accessible to derived classes like ScavTrap
+protected:		//Private to the outside world, but accessible to derived classes
 	std::string	name;		
 	int			hitPoints;
 	int			energyPoints;
-	int			damagePoints;
+	int			attackDamage;
 public:
 	ClapTrap();
 	ClapTrap(std::string newName);
+	ClapTrap(const ClapTrap&);
+	ClapTrap& operator=(const ClapTrap&);
 	~ClapTrap();
 	
 	unsigned int	getHitPoints();
@@ -33,6 +35,7 @@ public:
 	void			setHitPoints(unsigned int points);
 	void			setEnergyPoints(unsigned int points);
 	void			setDamagePoints(unsigned int points);
+	
 	void			attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);

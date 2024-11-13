@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 10:30:56 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:54:03 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 int	main()
 {
-	ClapTrap clapTrap("Trump");
+	ClapTrap Trump("Trump");
+	ClapTrap clippy;
+	ClapTrap Bertha(Trump);
 	
-	clapTrap.attack("Harris");
-	clapTrap.takeDamage(9);
-	clapTrap.attack("Putin");
-	clapTrap.beRepaired(20);
-	clapTrap.attack("Putin");
+	
+	clippy = Trump;
+	Bertha.attack("rando");
+	Trump.attack("Harris");
+	Trump.takeDamage(9);
+	Trump.attack("Putin");
+	Trump.beRepaired(20);
+	Trump.attack("Putin");
 }

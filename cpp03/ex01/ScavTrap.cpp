@@ -6,13 +6,17 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:21 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/12 15:27:23 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:41:52 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
+
+/********************************************************
+*				constructors/destructor 				* 
+*********************************************************/
 /*
 ** We need to call the parent (ClapTrap) constructor because when you create a 
 ** derived class object (ScavTrap), C++ needs to know how to initialize the 
@@ -20,58 +24,47 @@
 ** have essential initialization that needs to happen first
 */
 ScavTrap::ScavTrap() : ClapTrap() {
-	setName("defaultScav");
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setDamagePoints(20);
+	this->name = "defaultScav";
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name){
-	setName(name);
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setDamagePoints(20);
+ScavTrap::ScavTrap(std::string newName) : ClapTrap(newName) {
+	this->name = newName;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+	std::cout << "ScavTrap copy assignment called" << std::endl;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
+	return *this;
+}
+
 ScavTrap::~ScavTrap(){
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap " << name << " destructor called" << std::endl;
 }
 
-std::string&	ScavTrap::getName(){ return this->name; }
-
-unsigned int	ScavTrap::getHitPoints(){ return this->hitPoints; }
-
-unsigned int	ScavTrap::getEnergyPoints(){ return this->energyPoints; }
-
-unsigned int	ScavTrap::getDamagePoints(){ return this->damagePoints; }
-
-void	ScavTrap::setName(std::string new_name){
-	this->name = new_name;
-}
-
-void	ScavTrap::setHitPoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->hitPoints = points;
-	else
-		this->hitPoints = 0;
-}
-
-void	ScavTrap::setEnergyPoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->energyPoints = points;
-	else
-		this->energyPoints = 0;
-}
-
-void	ScavTrap::setDamagePoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->damagePoints = points;
-	else
-		this->damagePoints = 0;
-}
-
+/********************************************************
+*					special functions					* 
+*********************************************************/
 void	ScavTrap::attack(const std::string& target){
 	if (energyPoints == 0)
 		std::cout << "ScavTrap " << name << " has no energy and cannot attack:(" << std::endl;
@@ -80,36 +73,8 @@ void	ScavTrap::attack(const std::string& target){
 	else
 	{
 		energyPoints -= 1;
-		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << damagePoints << " points of damage! " 
+		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage! " 
 		"(energy points remaining: " << energyPoints << ")" << std::endl;
-	}
-}
-
-void	ScavTrap::takeDamage(unsigned int amount){
-	if (hitPoints <= (int)amount)
-	{
-		std::cout << "ScavTrap " << name << " is dead!"<< std::endl;
-		hitPoints = 0;
-	}
-	else
-	{
-		hitPoints -= amount;
-		std::cout << "ScavTrap " << name << " takes " << amount << " points of damage! " 
-		<< "(health points remaining: " << hitPoints << ")" << std::endl;
-	}
-}
-
-void	ScavTrap::beRepaired(unsigned int amount){
-	if (energyPoints == 0)
-		std::cout << "ScavTrap " << name << " has no energy and cannot be repaired";
-	else if (hitPoints == 0)
-		std::cout << "ScavTrap " << name << " is dead and cannot be repaired" << std::endl;
-	else
-	{
-		energyPoints -= 1;
-		hitPoints += amount;
-		std::cout << "ScavTrap " << name << " repairs " << amount << " points of damage! "
-		<< "(health points remaining: " << hitPoints << " | energy points remaining: " << energyPoints << ")" << std::endl;
 	}
 }
 
