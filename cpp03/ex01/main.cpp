@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/12 16:08:49 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:32:33 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@
 
 int	main()
 {
-	ClapTrap Aida("Aida");
+	ClapTrap clapTrap("Aida");
 	ScavTrap Demon("Demon");
 	ScavTrap Angel("Angel");
 
 	std::cout << "\n" << std::endl;
-	std::cout << "Aida HP: " << Aida.getHitPoints() << "  | EP: " << Aida.getEnergyPoints() << "  | Damage points: " << Aida.getDamagePoints() << std::endl;
+	std::cout << "clapTrap HP: " << clapTrap.getHitPoints() << "  | EP: " << clapTrap.getEnergyPoints() << "  | Damage points: " << clapTrap.getDamagePoints() << std::endl;
 	std::cout << "Demon HP: " << Demon.getHitPoints() << " | EP: " << Demon.getEnergyPoints() << " | Damage points: " << Demon.getDamagePoints() << std::endl;
 	std::cout << "Angel HP: " << Angel.getHitPoints() << " | EP: " << Angel.getEnergyPoints() << " | Damage points: " << Angel.getDamagePoints() << std::endl;
 	std::cout << "\n" << std::endl;
 	
-	Aida.setDamagePoints(2);
-	std::cout << "Aida DP: " << Aida.getDamagePoints() << std::endl;
-	Aida.attack("Demon");
+	clapTrap.setDamagePoints(2);
+	std::cout << "clapTrap DP: " << clapTrap.getDamagePoints() << std::endl;
+	clapTrap.attack("Demon");
 	Demon.takeDamage(2);
 	Angel.attack("Demon");
 	Demon.takeDamage(20);
 	Demon.beRepaired(15);
 	Angel.attack("Aida");
-	Aida.takeDamage(11);
-	Aida.beRepaired(20);
-	Aida.attack("Demon");
+	clapTrap.takeDamage(11);
+	clapTrap.beRepaired(20);
+	clapTrap.attack("Demon");
 	Demon.takeDamage(2);
 	Demon.attack("Angel");
 	Angel.takeDamage(20);
@@ -52,5 +52,5 @@ int	main()
 	std::cout << "\n" << std::endl;
 	std::cout << "\nDemon HP: " << Demon.getHitPoints() << " | EP: " << Demon.getEnergyPoints() << " | Damage points: " << Demon.getDamagePoints() << std::endl;
 	std::cout << "Angel HP: " << Angel.getHitPoints() << " | EP: " << Angel.getEnergyPoints() << " | Damage points: " << Angel.getDamagePoints() << std::endl;
-	std::cout << "Aida HP: " << Aida.getHitPoints() << "  | EP: " << Aida.getEnergyPoints() << "  | Damage points: " << Aida.getDamagePoints() << std::endl << std::endl;
+	std::cout << "Aida HP: " << clapTrap.getHitPoints() << "  | EP: " << clapTrap.getEnergyPoints() << "  | Damage points: " << clapTrap.getDamagePoints() << std::endl << std::endl;
 }

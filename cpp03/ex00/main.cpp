@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/12 16:02:20 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:30:56 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	main()
 {
-	ClapTrap ClapTrap("Trump");
+	ClapTrap clapTrap("Trump");
 	
-	ClapTrap.attack("Harris");
-	ClapTrap.takeDamage(9);
-	ClapTrap.attack("Putin");
-	ClapTrap.beRepaired(20);
-	ClapTrap.attack("Putin");
+	clapTrap.attack("Harris");
+	clapTrap.takeDamage(9);
+	clapTrap.attack("Putin");
+	clapTrap.beRepaired(20);
+	clapTrap.attack("Putin");
 }
