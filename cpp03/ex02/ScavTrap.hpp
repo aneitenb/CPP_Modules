@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:24 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 16:20:47 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:38:31 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ public:
 	ScavTrap& operator=(const ScavTrap&);
 	~ScavTrap();
 	
-	void			attack(const std::string& target);
-	void 			guardGate();
+	void	attack(const std::string& target);
+	void 	guardGate();
 };

@@ -6,16 +6,10 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:16:24 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:41:44 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:32:02 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** pragma prevents the "multiple inclusion" problem. When you include a header 
-** file multiple times (which can happen indirectly), this ensures the content 
-** is only processed once by the compiler. This prevents duplicate definitions 
-** and compilation errors.
-*/
 #pragma once
 
 # define UINT_MAX 4294967295

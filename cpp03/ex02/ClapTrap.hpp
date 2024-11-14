@@ -6,22 +6,20 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:12:15 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:44:30 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:24:22 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
-# define UINT_MAX 4294967295
-# include <string>
+#include <string>
 
 class ClapTrap
 {
 protected:
-	std::string	name;		
-	int			hitPoints;
-	int			energyPoints;
-	int			attackDamage;
+	std::string		name;		
+	unsigned int	hitPoints;
+	unsigned int	energyPoints;
+	unsigned int	attackDamage;
 public:
 	ClapTrap();
 	ClapTrap(std::string newName);
@@ -29,14 +27,11 @@ public:
 	ClapTrap& operator=(const ClapTrap&);
 	~ClapTrap();
 	
-	unsigned int	getHitPoints();
-	unsigned int	getEnergyPoints();
-	unsigned int	getDamagePoints();
-	void			setHitPoints(unsigned int points);
-	void			setEnergyPoints(unsigned int points);
-	void			setDamagePoints(unsigned int points);
+	void	showStats(std::string named);
+	void	setHitPoints(unsigned int points);
+	void	setEnergyPoints(unsigned int points);
 	
-	void			attack(const std::string& target);
-	void			takeDamage(unsigned int amount);
-	void			beRepaired(unsigned int amount);
+	void	attack(const std::string& target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 };

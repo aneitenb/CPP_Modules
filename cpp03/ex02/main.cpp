@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:05:26 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:00:34 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:43:14 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,15 @@ int	main()
 	ClapTrap clap;
 	ScavTrap scav;
 	FragTrap frag;
+	FragTrap fred(frag);
 
-	std::cout << "\n" << std::endl;
-	std::cout << "clap HP: " << clap.getHitPoints() << "  | EP: " << clap.getEnergyPoints() << "  | Damage points: " << clap.getDamagePoints() << std::endl;
-	std::cout << "scav HP: " << scav.getHitPoints() << " | EP: " << scav.getEnergyPoints() << " | Damage points: " << scav.getDamagePoints() << std::endl;
-	std::cout << "frag HP: " << frag.getHitPoints() << " | EP: " << frag.getEnergyPoints() << " | Damage points: " << frag.getDamagePoints() << std::endl;
-	std::cout << "\n" << std::endl;
+	clap.showStats("clap");
+	scav.showStats("scav");
+	frag.showStats("frag");
+	fred.showStats("fred");
 	
-	clap.setDamagePoints(2);
-	std::cout << "clap DP: " << clap.getDamagePoints() << std::endl;
 	clap.attack("scav");
-	scav.takeDamage(2);
+	scav.takeDamage(0);
 	frag.attack("scav");
 	scav.takeDamage(30);
 	scav.beRepaired(15);
@@ -39,19 +37,23 @@ int	main()
 	clap.takeDamage(30);
 	clap.beRepaired(20);
 	clap.attack("scav");
+	
 	scav.attack("frag");
 	frag.takeDamage(20);
 	scav.attack("frag");
 	frag.takeDamage(20);
 	scav.attack("frag");
 	frag.takeDamage(20);
-	// frag.setHitPoints(0);
+	frag.setHitPoints(0);
 	frag.attack("scav");
 	frag.highFivesGuys();
 
-	std::cout << std::endl;
-	
-	std::cout << "\nscav HP: " << scav.getHitPoints() << " | EP: " << scav.getEnergyPoints() << " | Damage points: " << scav.getDamagePoints() << std::endl;
-	std::cout << "frag HP: " << frag.getHitPoints() << " | EP: " << frag.getEnergyPoints() << " | Damage points: " << frag.getDamagePoints() << std::endl;
-	std::cout << "clap HP: " << clap.getHitPoints() << "  | EP: " << clap.getEnergyPoints() << "  | Damage points: " << clap.getDamagePoints() << std::endl << std::endl;
+	clap.showStats("clap");
+	scav.showStats("scav");
+	frag.showStats("frag");
+	fred.showStats("fred");
+
+	fred = frag;
+	frag.showStats("frag");
+	fred.showStats("fred");
 }

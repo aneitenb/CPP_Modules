@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:11:59 by aneitenb          #+#    #+#             */
-/*   Updated: 2024/11/13 15:43:59 by aneitenb         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:23:53 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 /********************************************************
-*				constructors/destructor 				* 
+*		constructors/copy assignment/destructor 		* 
 *********************************************************/
 ClapTrap::ClapTrap(){
 	std::cout << "Claptrap default constructor called" << std::endl;
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(std::string newName){
 	this->attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) : name("stanger")
+ClapTrap::ClapTrap(const ClapTrap& other)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = other;
@@ -58,37 +58,21 @@ ClapTrap::~ClapTrap(){
 /********************************************************
 *					get/set functions					* 
 *********************************************************/
-unsigned int	ClapTrap::getHitPoints(){
-	return this->hitPoints;
-}
-
-unsigned int	ClapTrap::getEnergyPoints(){
-	return this->energyPoints;
-}
-
-unsigned int	ClapTrap::getDamagePoints(){
-	return this->attackDamage;
+void	ClapTrap::showStats(std::string named){
+	std::cout << "--------STATS--------" << std::endl;
+	std::cout << named << " name: " << this->name << std::endl;
+	std::cout << named << " health points: " << this->hitPoints << std::endl;
+	std::cout << named << " energy points: " << this->energyPoints << std::endl;
+	std::cout << named << " damage points: " << this->attackDamage << std::endl;
+	std::cout << std::endl;
 }
 
 void	ClapTrap::setHitPoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->hitPoints = points;
-	else
-		this->hitPoints = 0;
+	this->hitPoints = points;
 }
 
 void	ClapTrap::setEnergyPoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->energyPoints = points;
-	else
-		this->energyPoints = 0;
-}
-
-void	ClapTrap::setDamagePoints(unsigned int points){
-	if (points < UINT_MAX)
-		this->attackDamage = points;
-	else
-		this->attackDamage = 0;
+	this->energyPoints = points;
 }
 
 /********************************************************
@@ -108,7 +92,7 @@ void	ClapTrap::attack(const std::string& target){
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
-	if (hitPoints <= (int)amount)
+	if (hitPoints <= amount)
 	{
 		std::cout << "ClapTrap " << name << " is dead!"<< std::endl;
 		hitPoints = 0;
@@ -126,10 +110,18 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		std::cout << name << " has no energy and cannot be repaired" << std::endl;
 	else if (hitPoints == 0)
 		std::cout << "ClapTrap " << name << " is dead and cannot be repaired" << std::endl;
+	else if (hitPoints > 4294967295 - amount)
+	{
+		energyPoints -= 1;
+		hitPoints = 4294967295;
+		std::cout << "ClapTrap " << name << " repairs to max unsigned int value! "
+		<< "(health points: " << hitPoints << " | energy points: " << energyPoints << ")" << std::endl;
+	}
 	else
 	{
 		energyPoints -= 1;
 		hitPoints += amount;
-		std::cout << "ClapTrap " << name << " repairs " << amount << " points of damage! (health points: " << hitPoints << " | energy points: " << energyPoints << ")" << std::endl;
+		std::cout << "ClapTrap " << name << " repairs " << amount << " points of damage! "
+		<< "(health points: " << hitPoints << " | energy points: " << energyPoints << ")" << std::endl;
 	}
 }
