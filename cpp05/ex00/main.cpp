@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:52:19 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/03/18 14:55:40 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/03/18 15:57:41 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(void) {
 		std::cout << "****************************************" << std::endl;
 		std::cout << "*        Throw Exception Tests         *" << std::endl;
 		std::cout << "****************************************" << std::endl;
-		//these will throw exceptions
 		try {
 			Bureaucrat c("C", 0);
 			std::cout << c << std::endl;

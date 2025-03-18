@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:52:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/03/18 15:34:59 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:39:09 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ Bureaucrat::~Bureaucrat(){
 /********************************************************
 *			overload of insertion operator  			* 
 *********************************************************/
-std::ostream& operator<<(std::ostream& stream, const Bureaucrat& called)
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& called)
 {
-	stream << called.getName() << ", bureaucrat GRADE: " << called.getGrade();
-	return stream;
+	os << called.getName() << ", bureaucrat GRADE: " << called.getGrade();
+	return os;
 }
 
 /********************************************************
@@ -76,4 +76,16 @@ void   Bureaucrat::decrementGrade(void){
 	if (grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	grade++;
+}
+
+void Bureaucrat::signForm(Form& form) {
+    if (form.getIsSigned())
+        std::cout << this->getName() << " cannot sign " << form.getName() << " because it's already signed" << std::endl;
+    else if (this->getGrade() > form.getGradeToSign())
+        std::cout << this->getName() << " cannot sign " << form.getName() << " because grade is too low" << std::endl;
+    else
+    {
+        std::cout << this->getName() << " signs " << form.getName() << std::endl;
+        form.beSigned(*this);
+    }
 }
