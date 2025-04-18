@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:52:19 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/03/18 16:45:09 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/04/18 17:44:52 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,6 @@ int main(void) {
 		a.signForm(l);
 		std::cout << a << std::endl;
 		std::cout << l << std::endl;
-
-		
-		
-		
 	} 
 	catch (const std::exception& e) {
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
