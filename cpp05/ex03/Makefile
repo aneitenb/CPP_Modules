@@ -6,12 +6,11 @@
 #    By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 11:52:04 by aneitenb          #+#    #+#              #
-#    Updated: 2025/06/08 17:18:21 by aneitenb         ###   ########.fr        #
+#    Updated: 2025/06/18 11:01:56 by aneitenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = DreamJob
-HEADERS	= -I ./include
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
@@ -20,7 +19,8 @@ SRCS =  main.cpp \
 		AForm.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp \
+		Intern.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -rf
 GREEN= "\033[32;1m
@@ -29,10 +29,10 @@ RESET= \033[0m"
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(HEADERS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo ${GREEN}Program DreamJob is Ready!${RESET}
 
 clean:
@@ -41,7 +41,8 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo ${GREEN}Program removed${RESET}
+	@$(RM) *_shrubbery
+	@echo ${GREEN}Program and output files removed${RESET}
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:14:50 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/06/08 17:17:32 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/06/18 10:41:16 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	std::cout << "* DRILLING NOISES *" << std::endl;
 	std::cout << "* DRRRRR * DRRRRR * DRRRRR *" << std::endl;
 	
+	// rand gives random # b/w 0 and max
+	// % 2 gives the remainder when divided by two
+	// any even number % 2 = 0  --> if (0) --> false --> failed
+	// any odd number % 2 = 1  --> if (1) --> true --> success
 	if (std::rand() % 2) {
 		std::cout << this->target << " has been robotomized successfully!" << std::endl;
 	} else {

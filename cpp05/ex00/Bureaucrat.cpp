@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:52:46 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/06/08 17:15:46 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/06/18 09:52:10 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,18 @@ std::ostream& operator<<(std::ostream& stream, const Bureaucrat& called)
 }
 
 /********************************************************
-*					get functions					* 
+*						exceptions  					* 
+*********************************************************/
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Grade is too low!";
+}
+
+/********************************************************
+*					get functions						* 
 *********************************************************/
 std::string	Bureaucrat::getName() const{
 	return name;

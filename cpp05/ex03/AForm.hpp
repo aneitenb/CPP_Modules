@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 17:17:55 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/06/08 17:17:56 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/06/18 10:52:52 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,23 +45,17 @@ public:
 	
 	class GradeTooHighException : public std::exception {
 		public:
-			const char* what() const throw() {
-				return "Grade is too high!";
-			}
+			const char* what() const throw();
 	};
-
+		
 	class GradeTooLowException : public std::exception {
 		public:
-			const char* what() const throw() {
-				return "Grade is too low!";
-			}
+			const char* what() const throw();
 	};
 	
 	class FormNotSignedException : public std::exception {
 		public:
-			const char* what() const throw() {
-				return "Form is not signed!";
-			}
+			const char* what() const throw();
 	};
 	
 	std::string		getName() const;

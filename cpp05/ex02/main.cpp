@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:52:19 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/06/08 17:17:11 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/06/18 10:49:31 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int main(void) {
 		RobotomyRequestForm robotForm("employee");
 		PresidentialPardonForm pardonForm("criminal");
 		
-		std::cout << "ShrubberyCreationForm: " << shrubForm << std::endl;
-		std::cout << "RobotomyRequestForm: " << robotForm << std::endl;
-		std::cout << "PresidentialPardonForm: " << pardonForm << std::endl;
+		std::cout << shrubForm << std::endl;
+		std::cout << robotForm << std::endl;
+		std::cout << pardonForm << std::endl;
 		std::cout << std::endl;
 		
 		std::cout << "****************************************" << std::endl;
@@ -73,7 +73,7 @@ int main(void) {
 		
 		std::cout << "Low rank bureaucrat execution attempts:" << std::endl;
 		try {
-			shrubForm.execute(lowRank);  //should succeed (grade 137)
+			shrubForm.execute(lowRank);  //should fail (lowrank grade 145, exec: 137)
 		} catch (std::exception &e) {
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
@@ -81,7 +81,7 @@ int main(void) {
 		
 		std::cout << "Mid rank bureaucrat execution attempts:" << std::endl;
 		try {
-			robotForm.execute(midRank);  //should succeed (grade 45)
+			robotForm.execute(midRank);  //should fail (midrank grade: 50, exec: 45)
 		} catch (std::exception &e) {
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
@@ -127,12 +127,12 @@ int main(void) {
 		std::cout << "****************************************" << std::endl;
 		
 		RobotomyRequestForm multiRobot("test subject");
-		midRank.signForm(multiRobot);
+		highRank.signForm(multiRobot);
 		
 		std::cout << "Attempting 5 robotomies to demonstrate randomness:" << std::endl;
 		for (int i = 0; i < 5; i++) {
 			std::cout << "Attempt " << (i + 1) << ": ";
-			midRank.executeForm(multiRobot);
+			highRank.executeForm(multiRobot);
 		}
 	} 
 	catch (const std::exception& e) {

@@ -6,12 +6,11 @@
 #    By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 11:52:04 by aneitenb          #+#    #+#              #
-#    Updated: 2025/06/08 17:16:23 by aneitenb         ###   ########.fr        #
+#    Updated: 2025/06/18 11:02:28 by aneitenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = DreamJob
-HEADERS	= -I ./include
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
@@ -26,10 +25,10 @@ RESET= \033[0m"
 all: $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(HEADERS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo ${GREEN}Program DreamJob is Ready!${RESET}
 
 clean:

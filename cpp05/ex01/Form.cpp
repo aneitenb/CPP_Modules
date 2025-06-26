@@ -6,7 +6,7 @@
 /*   By: aneitenb <aneitenb@student.fi>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 14:58:57 by aneitenb          #+#    #+#             */
-/*   Updated: 2025/06/08 17:16:10 by aneitenb         ###   ########.fr       */
+/*   Updated: 2025/06/18 10:03:34 by aneitenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,17 @@ std::ostream& operator<<(std::ostream& stream, const Form& called)
 {
 	stream << called.getName() << ", Form GRADE TO SIGN: " << called.getGradeToSign() << ", GRADE TO EXECUTE: " << called.getGradeToExecute() << ", IS SIGNED: " << called.getIsSigned();
 	return stream;
+}
+
+/********************************************************
+*						exceptions  					* 
+*********************************************************/
+const char* Form::GradeTooHighException::what() const throw() {
+	return "Grade is too high!";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "Grade is too low!";
 }
 
 /********************************************************
